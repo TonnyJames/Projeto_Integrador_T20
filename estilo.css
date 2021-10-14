@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#nome{
+    font-size: 18;
+    background-color:rgba(24, 243, 159, 0.438);
+    font-family: fantasy;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+body{background-color: whitesmoke;}
+
+.inic{
+    width: 100%;
+}
+.container-fluid{
+    float: left;
+    width: 50%;
+    margin-left: 0;
+}
+.txtDescript{
+    margin-top: 30px;
+}
+.caulcule{
+    width: 50%;
+    float: right;
+}
+#Bcalcule{
+    float: right;
+    width: 25%;
+    padding: 10px;
+}
+#Bcalcule:hover{
+    opacity: 60%;
+}
+.lead{
+    padding-left: 25px;
+    color: rgb(11, 41, 29);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Pmanual{
+    padding-left: 25px;    
+    padding-right: 25px;    
+}
+.calcContainer{
+    position: relative;
+    width: 100%;
+}
+.calcBox{
+    width: 33.3%;
+    background-color: rgba(24, 243, 159, 0.438);
+    float: left;
+    padding: 25px;
+}
