@@ -1,57 +1,111 @@
-*{
-    margin: 0;
+* {
+    margin : 0;
     padding: 0;
+    scroll-behavior: auto;
 }
-#nome{
-    font-size: 18;
-    background-color:rgba(24, 243, 159, 0.438);
-    font-family: fantasy;
+
+#nome {
+    font-size       : 18;
+    background-color: rgba(62, 122, 99, 0.774);
+    font-family     : fantasy;
+
 }
-h1{
-    color: white;
+
+h1 {
+    color     : white;
     text-align: center;
 }
-body{background-color: whitesmoke;}
+body {
+    background-color: whitesmoke;
+}
 
-.inic{
+.inic {
     width: 100%;
 }
-.container-fluid{
-    float: left;
-    width: 50%;
+.container-fluid {
+    float : left;
+    width : 50%;
+    height: auto;
     margin-left: 0;
 }
-.txtDescript{
-    margin-top: 30px;
+
+.txtDescript {
+    padding-right: 50px;
+    padding-left : 50px;
+    font-size    : 12, 9pt;
 }
-.caulcule{
+
+.caulcule {
     width: 50%;
     float: right;
 }
-#Bcalcule{
-    float: right;
-    width: 25%;
-    padding: 10px;
+#imgLink {
+    width        : 22%;
+    padding      : 15px;
+    border       : 1px solid #ddd;
+    border-radius: 8px;
 }
-#Bcalcule:hover{
+#imgLink:hover {
     opacity: 60%;
 }
-.lead{
+
+.lead {
     padding-left: 25px;
-    color: rgb(11, 41, 29);
-    font-family: Arial, Helvetica, sans-serif;
+    color       : rgba(62, 122, 99, 0.774);
+    font-family : Arial, Helvetica, sans-serif;
 }
-.Pmanual{
-    padding-left: 25px;    
-    padding-right: 25px;    
+
+.divManual {
+    width: 60%;
 }
-.calcContainer{
+
+.Pmanual {
+    padding-left : 25px;
+    padding-right: 25px;
+}
+
+.calcContainer {
     position: relative;
-    width: 100%;
+    width   : 100%;
 }
-.calcBox{
-    width: 33.3%;
-    background-color: rgba(24, 243, 159, 0.438);
-    float: left;
-    padding: 25px;
+
+.calcBox {
+    width           : 25%;
+    height          : 120px;
+    background-color: rgba(62, 122, 99, 0.774);
+    float           : left;
+    padding         : 25px;
+    box-shadow      : 5px 5px 10px rgba(0, 0, 0, 0.562);
+}
+
+#btnCalc {
+    background-color: rgb(24, 24, 212);
+    width           : 120px;
+    margin-top      : 25px;
+    text-align      : center;
+    color           : white;
+    font-weight     : 700;
+    box-shadow      : 5px 5px 10px rgba(0, 0, 0, 0.562);
+}
+#btnCalc:hover{
+    zoom: 105%;
+    cursor: pointer;
+}
+#senar{
+    padding: 20px;
+    margin: auto;
+}
+
+.footer {
+    background-color: rgba(62, 122, 99, 0.774);
+    bottom          : 0; 
+    width           : 100%;
+    height          : 50px;
+    margin-top      : 10px;
+    text-align      : center;
+    color           : white;
+}
+.sobreNos{
+    text-align: center;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.404);
 }

@@ -3,7 +3,8 @@
         <meta charset="utf-8" >
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="estilo.css">
-        <title>Silagem Silo Calc</title>
+        <title>Silagem Fácil</title>
+        <script src="script.js"></script>
     </head>
     <body>
         <header id="nome">
@@ -14,19 +15,19 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-              <a class="navbar-brand" href="#">Silo Fácil</a>
+              <a class="navbar-brand" href="index.html">Silagem Fácil</a>
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
+                <li class="nav-item ">
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(Página atual)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="manual.html">Manual</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link" href="calcule.html">Calcule</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Sobre nós</a>
+                  <a class="nav-link" href="sobreNos.html">Sobre nós</a>
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
@@ -46,15 +47,18 @@
             <form action="">
                 <div class="calcBox">
                     <label for="">Peso Inicial da Amostra</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="msInic">
                 </div>
                 <div class="calcBox">
                     <label for="">Peso Final da Amostra</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="msFim">
                 </div>
                 <div class="calcBox">
                     <label for="">Teor de Matéria Seca</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="teorMs">
+                </div>
+                <div class="calcBox">
+                    <input id="btnCalc" type="button" onclick="tmsCalc(this.form)" value="Calcular">
                 </div>
             </form>
         </div>
@@ -72,19 +76,22 @@
             <form action="">
                 <div class="calcBox">
                     <label for="">Teor de Matéria Seca</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="teorMs">
                 </div>
                 <div class="calcBox">
                     <label for="">Categoria do animal</label> <br>
                     <select name="catAnimal" id="">
-                        <option value="10">Vaca em lactação</option>
-                        <option value="">Vaca seca</option>
-                        <option value="">Novilha</option>
+                        <option value="12">Vaca em lactação</option>
+                        <option value="10">Vaca seca</option>
+                        <option value="8">Novilha</option>
                     </select>
                 </div>
                 <div class="calcBox">
                     <label for="">quantidade animal/dia</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="nsaResult">
+                </div>
+                <div class="calcBox">
+                    <input id="btnCalc" type="button" onclick="nsaCalc(this.form)" value="Calcular">
                 </div>
             </form>
         </div>
@@ -102,15 +109,18 @@
             <form action="">
                 <div class="calcBox">
                     <label for="">quantidade animal/dia</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="nescDia">
                 </div>
                 <div class="calcBox">
                     <label for="">quantidade de animais</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="qtdAnimais">
                 </div>
                 <div class="calcBox">
                     <label for="">Quantidade de Silagem por dia</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="nudResult">
+                </div>
+                <div class="calcBox">
+                    <input id="btnCalc" type="button" onclick="nudCalc(this.form)" value="Calcular">
                 </div>
             </form>
         </div>
@@ -128,15 +138,18 @@
             <form action="">
                 <div class="calcBox">
                     <label for="">Quantidade de Silagem por dia</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="nudResult">
                 </div>
                 <div class="calcBox">
                     <label for="">Por quantos dias</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="qtDias">
                 </div>
                 <div class="calcBox">
                     <label for="">Total de Silagem à ser produzida</label> <br>
-                    <input type="double" name="mSeca">
+                    <input type="double" name="qspResult">
+                </div>
+                <div class="calcBox">
+                    <input id="btnCalc" type="button" onclick="qspCalc(this.form)" value="Calcular">
                 </div>
             </form>
         </div>
@@ -147,7 +160,7 @@
         <br>
         <hr>
 
-        <p class="lead">
+        <!-- <p class="lead">
             Calcule a área necessária para produção de silagem
         </p>
         <div class="calcContainer">
@@ -191,8 +204,17 @@
                     <input type="double" name="mSeca">
                 </div>
             </form>
-        </div>
-
+        </div> -->
+        <div id="senar">
+            <p>Este site foi desenvolvido com o apoio do documento da coleção do <a href="http://ead.senar.org.br/">SENAR</a> Nº 154 e
+              todas as informações podem ser verificadas <a
+                href="https://www.cnabrasil.org.br/assets/arquivos/154-SILAGEM-DE-MILHO-E-SORGO.pdf">Clicando aqui.</a></p>
+          </div>
+        <footer>
+            <div class="footer">
+              <p style="padding: 10px; font-size: 14pt; font-weight: 600; text-decoration: underline;">Silagem Fácil</p>
+            </div>
+          </footer>
 
     </body>
 </html>      
